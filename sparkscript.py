@@ -76,7 +76,7 @@ def preprocess_text(text):
     return cleaned_tokens
 
 # Load the input CSV file into a DataFrame
-input_file = "/user/hadoop/repository/cord19file/short_metadata.csv" 
+input_file = "/user/hadoop/repository/cord19file/metadata.csv" 
 # Read the CSV file using Spark DataFrame API
 df = spark.read.option("header", "true").option("multiline", "true").csv(input_file)
 # abstract = df.select("_c8")

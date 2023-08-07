@@ -1,33 +1,5 @@
 #!/usr/bin/env python3
-import tarfile
-tar = tarfile.open('nltk.tar.gz')
-tar.extractall()
-tar.close()
-tar = tarfile.open('pandas.tar.gz')
-tar.extractall()
-tar.close()
-tar = tarfile.open('numpy.tar.gz')
-tar.extractall()
-tar.close()
-tar = tarfile.open('emoji.tar.gz')
-tar.extractall()
-tar.close()
 import sys
-sys.path.insert(0, 'nltk')
-sys.path.insert(0, 'pandas')
-sys.path.insert(0, 'numpy')
-sys.path.insert(0, 'emoji')
-#import sys
-#sys.path.insert(0, 'nltk/nltk')
-#sys.path.insert(0, 'pandas/pandas')
-#sys.path.insert(0, 'numpy/numpy')
-#sys.path.insert(0, 'emoji/emoji')
-
-
-import nltk
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
 # Import necessary libraries
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -96,8 +68,8 @@ for line_number, line in enumerate(sys.stdin, start=0):
     csv_reader = csv.reader([line])
     columns = next(csv_reader)
     #Hopefully, 9th column is consistently about the abstract
-    abstract = columns[9]  
-    
+    abstract = columns[8]  
+
     # Apply text preprocessing to the abstract
     cleaned_tokens = preprocess_text(abstract)
     if not cleaned_tokens:
